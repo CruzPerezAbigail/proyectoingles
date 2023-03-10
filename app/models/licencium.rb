@@ -1,0 +1,2 @@
+class Licencium < ApplicationRecord
+end
