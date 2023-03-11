@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :documentos
   devise_for :user, :controllers => {
     :registrations => "devise/registrations",
     :sessions => "devise/sessions",

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  oficio: MyString
+  asunto: MyString
+  fecha: 2023-03-11
+  planestudos: MyString
+  seccion: MyString
+  numerocontrol: 1
+  nombre: MyString
+
+two:
+  oficio: MyString
+  asunto: MyString
+  fecha: 2023-03-11
+  planestudos: MyString
+  seccion: MyString
+  numerocontrol: 1
+  nombre: MyString

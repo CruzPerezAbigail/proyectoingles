@@ -1,0 +1,63 @@
+<%= form_with(model: documento) do |form| %>
+  <% if documento.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
+
+      <ul>
+        <% documento.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+   <div>
+    <%= form.label :header_image, style: "display: block" %>
+    <%= form.file_field :header_image , class: "form-control"%>
+   </div>
+
+  <div>
+    <%= form.label :uploads, style: "display: block" %>
+    <%= form.file_field :uploads, multiple: true, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :oficio, style: "display: block" %>
+    <%= form.text_field :oficio , class: "form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :asunto, style: "display: block" %>
+    <%= form.text_field :asunto, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.date_field :fecha, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :planestudos, style: "display: block" %>
+    <%= form.text_field :planestudos, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :seccion, style: "display: block" %>
+    <%= form.text_field :seccion, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :numerocontrol, style: "display: block" %>
+    <%= form.number_field :numerocontrol, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre , class: "form-control"%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
