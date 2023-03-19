@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.1.0)
     actioncable (7.0.4)
       actionpack (= 7.0.4)
       activesupport (= 7.0.4)
@@ -68,6 +69,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    afm (0.2.2)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
     bcrypt (3.1.18)
@@ -85,6 +87,8 @@ GEM
       momentjs-rails (>= 2.8.1)
     bower-rails (0.12.0)
     builder (3.2.4)
+    call-me (0.0.2.3)
+      refining
     cancan (1.6.10)
     capybara (3.37.1)
       addressable
@@ -114,11 +118,16 @@ GEM
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5-x64-mingw-ucrt)
+    ffi-extra (0.1.0)
+      ffi
+    ffi-inline (0.0.4.3)
+      ffi (>= 0.4.0)
     font_awesome5_rails (1.5.0)
       nokogiri (>= 1.11.3)
       railties (>= 4.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hashery (2.1.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -127,6 +136,7 @@ GEM
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
+    iso-639 (0.3.6)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -172,6 +182,12 @@ GEM
     nokogiri (1.13.8-x64-mingw-ucrt)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pdf-reader (2.11.0)
+      Ascii85 (~> 1.0)
+      afm (~> 0.2.1)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     popper_js (2.11.6)
     public_suffix (5.0.0)
     puma (5.6.5)
@@ -209,6 +225,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    refining (0.0.5.5)
     regexp_parser (2.5.0)
     reline (0.3.0)
       io-console (~> 0.5)
@@ -216,6 +233,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    ruby-rc4 (0.1.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -243,9 +261,16 @@ GEM
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     strscan (3.0.4)
+    tesseract (0.1.0)
+    tesseract-ocr (0.1.8)
+      call-me
+      ffi-extra
+      ffi-inline
+      iso-639
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
+    ttfunk (1.7.0)
     turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -288,6 +313,7 @@ DEPENDENCIES
   bootstrap-datetimepicker-rails
   bootstrap3-datetimepicker-rails
   bower-rails
+  builder
   cancan
   capybara
   composite_primary_keys (~> 14.0, >= 14.0.4)
@@ -302,6 +328,8 @@ DEPENDENCIES
   jquery-rails
   momentjs-rails
   mysql2
+  nokogiri
+  pdf-reader
   popper_js (~> 2.11, >= 2.11.6)
   puma (~> 5.0)
   rails (~> 7.0.4)
@@ -310,6 +338,8 @@ DEPENDENCIES
   sprockets (~> 4.1, >= 4.1.1)
   sprockets-rails
   stimulus-rails
+  tesseract
+  tesseract-ocr
   turbo-rails
   tzinfo-data
   web-console

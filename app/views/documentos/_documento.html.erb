@@ -1,28 +1,5 @@
 <div id="<%= dom_id documento %>">
-  <p>
-    <strong>Oficio:</strong>
-    <%= documento.oficio %>
-  </p>
-
-  <p>
-    <strong>Asunto:</strong>
-    <%= documento.asunto %>
-  </p>
-
-  <p>
-    <strong>Fecha:</strong>
-    <%= documento.fecha %>
-  </p>
-
-  <p>
-    <strong>Planestudos:</strong>
-    <%= documento.planestudos %>
-  </p>
-
-  <p>
-    <strong>Seccion:</strong>
-    <%= documento.seccion %>
-  </p>
+  
 
   <p>
     <strong>Numerocontrol:</strong>
@@ -34,8 +11,13 @@
     <%= documento.nombre %>
   </p>
   <p>
-    <strong>documentos:</strong>
-    <%= documento.uploads %>
+    <strong>Nombre del archivo:</strong>
+    <% @documento.uploads.each do |adjunto| %>
+  <p><%= adjunto.filename.to_s %></p>
+<% end %>
+<p>
+    <strong>Estatus:</strong>
+    <%= documento.estatus %>
   </p>
 
 </div>

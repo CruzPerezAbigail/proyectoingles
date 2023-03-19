@@ -1,0 +1,23 @@
+
+<%= form_tag({:controller => "archivos", :action => "subir_archivo"}, :method => "post", :multipart => true) do %>
+  <% if archivo.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(archivo.errors.count, "error") %> prohibited this archivo from being saved:</h2>
+
+      <ul>
+        <% archivo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= file_field_tag 'archivo' %>
+  <%= submit_tag 'Enviar archivo' %>
+  
+ 
+
+<%end%>
+
+

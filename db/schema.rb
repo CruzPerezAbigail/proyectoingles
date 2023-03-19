@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_11_192242) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_161405) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_192242) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "archivos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "documentos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "oficio"
     t.string "asunto"
@@ -49,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_192242) do
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "estatus", limit: 45
   end
 
   create_table "users", id: :string, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

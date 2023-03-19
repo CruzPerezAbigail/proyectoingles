@@ -1,3 +1,7 @@
+<head>
+<%= stylesheet_link_tag "style copy " %>
+</head>
+
 <%= form_with(model: documento) do |form| %>
   <% if documento.errors.any? %>
     <div style="color: red">
@@ -12,52 +16,41 @@
   <% end %>
 
 
-   <div>
-    <%= form.label :header_image, style: "display: block" %>
+   <div class="form-group row">
+    <%= form.label :header_image,"Cargar imagen", class:'col-sm-2' %>
+    <div class="col-sm-4">
     <%= form.file_field :header_image , class: "form-control"%>
    </div>
+   </div>
 
-  <div>
-    <%= form.label :uploads, style: "display: block" %>
+  <div class="form-group row">
+    <%= form.label :uploads,"Subir documento" ,class:'col-sm-2'%>
+    <div class="col-sm-4">
     <%= form.file_field :uploads, multiple: true, class: "form-control" %>
   </div>
-
-  <div>
-    <%= form.label :oficio, style: "display: block" %>
-    <%= form.text_field :oficio , class: "form-control"%>
   </div>
 
-  <div>
-    <%= form.label :asunto, style: "display: block" %>
-    <%= form.text_field :asunto, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= form.label :fecha, style: "display: block" %>
-    <%= form.date_field :fecha, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= form.label :planestudos, style: "display: block" %>
-    <%= form.text_field :planestudos, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= form.label :seccion, style: "display: block" %>
-    <%= form.text_field :seccion, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= form.label :numerocontrol, style: "display: block" %>
+  <div class="form-group row"> 
+    <%= form.label :numerocontrol,"Número de control",class:'col-sm-2' %>
+    <div class="col-sm-4">
     <%= form.number_field :numerocontrol, class: "form-control" %>
   </div>
-
-  <div>
-    <%= form.label :nombre, style: "display: block" %>
-    <%= form.text_field :nombre , class: "form-control"%>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group row">
+    <%= form.label :nombre,"Nombre", class:'col-sm-2'%>
+    <div class="col-sm-4">
+    <%= form.text_field :nombre , class: "form-control"%>
+  </div>
+  </div>
+   <div class="form-group row">
+    <%= form.label :estatus,"Estatus", class:'col-sm-2'%>
+    <div class="col-sm-4">
+    <%= form.select :estatus, ["PAGADO", "PENDIENTE"], prompt: "Seleccione el estado" %>
+  </div>
+  </div>
+
+ 
+    <button class="btn btn-info" <%= form.submit %> Guardar </button>
   </div>
 <% end %>

@@ -30,6 +30,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'builder'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -95,3 +97,6 @@ gem 'momentjs-rails'
 gem 'bootstrap-daterangepicker-rails'
 gem 'bootstrap-datetimepicker-rails'
 gem 'bootstrap3-datetimepicker-rails'
+gem 'nokogiri'
+gem 'pdf-reader' 
+

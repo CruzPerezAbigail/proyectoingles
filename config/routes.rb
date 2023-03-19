@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+
+    resources :archivos 
+    post 'archivos/subir_archivo' => 'archivos#subir_archivo'
+  
   resources :documentos
+  get '/descargar_pdf', to: 'documentos#descargar_pdf'
+  get 'ingles', to: 'home#ingles'
+  get 'financieros', to: 'home#financieros'
+  get 'direccion', to: 'home#direccion'
+  get 'servicios', to: 'home#serviciosescolares'
+
   devise_for :user, :controllers => {
     :registrations => "devise/registrations",
     :sessions => "devise/sessions",
@@ -7,13 +17,30 @@ Rails.application.routes.draw do
     :confirmations => "devise/confirmations"
   }
 
-  devise_scope :devise do 
-    get 'signup', to: 'devise/registrations#new'
-    get 'sign_in', to: 'devise/sessions#new'
-    get 'signout', to: 'devise/sessions#destroy'
-  end 
+  # devise_scope :devise do 
+  #   get 'signup', to: 'devise/registrations#new'
+  #   get 'sign_in', to: 'devise/sessions#new'
+  #   get 'signout', to: 'devise/sessions#destroy'
+  # end 
 
-  
+  constraints ->(req) { req.session[:user_role] == 'administrador' } do
+    # Rutas para el rol de administrador
+    get '/admin/dashboard', to: 'admin#dashboard'
+    # ...
+  end
+
+  constraints ->(req) { req.session[:user_role] == 'ingles' } do
+    get 'ingles', to: 'home#ingles'
+  end
+  constraints ->(req) { req.session[:user_role] == 'financieros' } do
+    get 'financieros', to: 'home#financieros'
+  end
+  constraints ->(req) { req.session[:user_role] == 'direccion' } do
+    get 'direccion', to: 'home#direccion'
+  end
+  constraints ->(req) { req.session[:user_role] == 'servicio' } do
+    get 'servicios', to: 'home#serviciosescolares'
+  end
  
   
   root to: 'home#index'

@@ -1,0 +1,5 @@
+<%= form_tag({:controller => "archivos", :action => "subir_archivo"}, :method => "post", :multipart => true) do %>
+
+  <%= file_field_tag 'archivo' %>
+  <%= submit_tag 'Enviar archivo' %>
+  <%end%>
