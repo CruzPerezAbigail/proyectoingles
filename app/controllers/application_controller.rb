@@ -8,5 +8,17 @@ class ApplicationController < ActionController::Base
              devise_parameter_sanitizer.permit(:account_update, keys: [:email, :nombre, :id, :apellido_uno, :apellido_dos, :role])
          end
 
-         
+         def after_sign_in_path_for(resource)
+            if current_user.role == 'ingles'
+              ingles_path
+            elsif current_user.role == 'financieros'
+              financieros_path
+            elsif current_user.role == 'direccion'
+              direccion_path
+            elsif current_user.role == 'servicios'
+              servicios_path
+            else
+              root_path 
+            end
+          end
 end

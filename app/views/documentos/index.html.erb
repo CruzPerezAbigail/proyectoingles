@@ -37,14 +37,16 @@
                     <td></td>
                     <td><%= documento.id %></td>
                     <td><%= documento.nombre %></td>
-                    <td><%= documento.numerocontrol  %></td>
+                    <td><%= documento.numero_de_control  %></td>
                     <td><% documento.uploads.each do |adjunto| %>
                           <p><%= adjunto.filename.to_s %></p>
+                          <p><%= link_to 'Descargar', rails_blob_path(adjunto.blob, disposition: 'attachment') %></p>
                         <% end %></td>
                     <td>
                     <a href="<%= edit_documento_path(documento)%>" class="edit"><i class="bi bi-pencil-square"></i></a>
                     <a  class="mostrar"  <%= link_to ({:action => :show, :id => documento.id}) do %><i class="bi bi-eye-fill"></i><%end%></a>
-                     <a> <%= link_to "Descargar PDF", descargar_pdf_path %></a>
+                     <%= link_to 'Agregar Pago', new_payment_path(documento_id: documento.id) %>
+  </tr>
                      </td>
                   </tr > 
 <%end %>

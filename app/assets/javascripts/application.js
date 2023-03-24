@@ -17,6 +17,7 @@
 //= require moment
 //= require daterangepicker
 //= require bootstrap-datetimepicker
+//= require ahoy
 
 
 

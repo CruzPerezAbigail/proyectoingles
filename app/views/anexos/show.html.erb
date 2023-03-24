@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @anexo %>
+
+<div>
+  <%= link_to "Edit this anexo", edit_anexo_path(@anexo) %> |
+  <%= link_to "Back to anexos", anexos_path %>
+
+  <%= button_to "Destroy this anexo", @anexo, method: :delete %>
+</div>

@@ -1,0 +1,13 @@
+<div id="<%= dom_id anexo %>">
+  <p>
+    <strong>Titulo:</strong>
+    <%= anexo.titulo %>
+  </p>
+  <p>
+    <strong>Nombre del archivo:</strong>
+    <% @anexo.uploads.each do |upload| %>
+  <p><%= upload.blob.filename %></p>
+  <p><%= link_to 'Descargar', rails_blob_path(upload.blob, disposition: 'attachment') %></p>
+<% end %>
+<p>
+</div>

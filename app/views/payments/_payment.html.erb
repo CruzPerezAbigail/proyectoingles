@@ -1,0 +1,23 @@
+<div id="<%= dom_id payment %>">
+<p>
+    <strong>Numerocontrol:</strong>
+    <%= payment.numero_control %>
+  </p>
+
+  <p>
+   
+   <strong>Nombre del archivo:</strong>
+<%= payment.uploads%>
+    <%# <% @payment.uploads.each do |upload| %>
+  <%# <p><%= upload.blob.filename %></p> %>
+    <%# <%end%> %> %>
+<%# <p>
+<p> %>
+    <strong>Identificado de la constancia:</strong>
+    <%= payment.documento_id%>
+    
+<p>
+    <strong>Estatus:</strong>
+    <%= payment.status %>
+  </p>
+</div>

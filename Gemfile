@@ -99,4 +99,5 @@ gem 'bootstrap-datetimepicker-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'nokogiri'
 gem 'pdf-reader' 
-
+gem "ahoy_matey"
+gem 'serialport'

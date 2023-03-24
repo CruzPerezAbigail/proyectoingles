@@ -70,6 +70,10 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     afm (0.2.2)
+    ahoy_matey (4.2.1)
+      activesupport (>= 5.2)
+      device_detector
+      safely_block (>= 0.2.1)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
     bcrypt (3.1.18)
@@ -87,8 +91,6 @@ GEM
       momentjs-rails (>= 2.8.1)
     bower-rails (0.12.0)
     builder (3.2.4)
-    call-me (0.0.2.3)
-      refining
     cancan (1.6.10)
     capybara (3.37.1)
       addressable
@@ -107,6 +109,7 @@ GEM
     debug (1.4.0)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
+    device_detector (1.1.0)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -115,13 +118,10 @@ GEM
       warden (~> 1.2.3)
     devise-i18n-views (0.3.7)
     digest (3.1.0)
+    errbase (0.2.2)
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5-x64-mingw-ucrt)
-    ffi-extra (0.1.0)
-      ffi
-    ffi-inline (0.0.4.3)
-      ffi (>= 0.4.0)
     font_awesome5_rails (1.5.0)
       nokogiri (>= 1.11.3)
       railties (>= 4.2)
@@ -136,7 +136,6 @@ GEM
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
-    iso-639 (0.3.6)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -225,7 +224,6 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    refining (0.0.5.5)
     regexp_parser (2.5.0)
     reline (0.3.0)
       io-console (~> 0.5)
@@ -235,6 +233,8 @@ GEM
     rexml (3.2.5)
     ruby-rc4 (0.1.5)
     rubyzip (2.3.2)
+    safely_block (0.3.0)
+      errbase (>= 0.1.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -251,6 +251,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    serialport (1.3.2)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -261,12 +262,6 @@ GEM
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
     strscan (3.0.4)
-    tesseract (0.1.0)
-    tesseract-ocr (0.1.8)
-      call-me
-      ffi-extra
-      ffi-inline
-      iso-639
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
@@ -307,6 +302,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  ahoy_matey
   bootsnap
   bootstrap (~> 5.2, >= 5.2.1)
   bootstrap-daterangepicker-rails
@@ -335,11 +331,10 @@ DEPENDENCIES
   rails (~> 7.0.4)
   sassc-rails
   selenium-webdriver
+  serialport
   sprockets (~> 4.1, >= 4.1.1)
   sprockets-rails
   stimulus-rails
-  tesseract
-  tesseract-ocr
   turbo-rails
   tzinfo-data
   web-console

@@ -1,0 +1,29 @@
+<%= form_with(model: anexo) do |form| %>
+  <% if anexo.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(anexo.errors.count, "error") %> prohibited this anexo from being saved:</h2>
+
+      <ul>
+        <% anexo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="form-group row">
+    <%= form.label :uploads,"Subir documento" ,class:'col-sm-2'%>
+    <div class="col-sm-4">
+    <%= form.file_field :uploads, multiple: true, class: "form-control" %>
+  </div>
+  </div>
+
+  <div class="form-group row"> 
+    <%= form.label :titulo,"titulo",class:'col-sm-2' %>
+    <div class="col-sm-4">
+    <%= form.number_field :titulo, class: "form-control" %>
+  </div>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

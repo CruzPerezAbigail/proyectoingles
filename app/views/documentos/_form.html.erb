@@ -5,8 +5,7 @@
 <%= form_with(model: documento) do |form| %>
   <% if documento.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(documento.errors.count, "error") %> prohibited this documento from being saved:</h2>
-
+       
       <ul>
         <% documento.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -31,9 +30,9 @@
   </div>
 
   <div class="form-group row"> 
-    <%= form.label :numerocontrol,"Número de control",class:'col-sm-2' %>
+    <%= form.label :numero_de_control,"Número de control",class:'col-sm-2' %>
     <div class="col-sm-4">
-    <%= form.number_field :numerocontrol, class: "form-control" %>
+    <%= form.number_field :numero_de_control, class: "form-control" %>
   </div>
   </div>
 
@@ -44,9 +43,9 @@
   </div>
   </div>
    <div class="form-group row">
-    <%= form.label :estatus,"Estatus", class:'col-sm-2'%>
+    <%= form.label :status,"Estatus", class:'col-sm-2'%>
     <div class="col-sm-4">
-    <%= form.select :estatus, ["PAGADO", "PENDIENTE"], prompt: "Seleccione el estado" %>
+    <%= form.select :status, ["PAGADO", "PENDIENTE"], prompt: "Seleccione el estado" %>
   </div>
   </div>
 

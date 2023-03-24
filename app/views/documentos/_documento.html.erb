@@ -3,7 +3,7 @@
 
   <p>
     <strong>Numerocontrol:</strong>
-    <%= documento.numerocontrol %>
+    <%= documento.numero_de_control %>
   </p>
 
   <p>
@@ -12,12 +12,13 @@
   </p>
   <p>
     <strong>Nombre del archivo:</strong>
-    <% @documento.uploads.each do |adjunto| %>
-  <p><%= adjunto.filename.to_s %></p>
+    <% @documento.uploads.each do |upload| %>
+  <p><%= upload.blob.filename %></p>
+  <p><%= link_to 'Descargar', rails_blob_path(upload.blob, disposition: 'attachment') %></p>
 <% end %>
 <p>
     <strong>Estatus:</strong>
-    <%= documento.estatus %>
+    <%= documento.status %>
   </p>
 
 </div>

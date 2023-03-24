@@ -4,12 +4,11 @@ class Ability
   def initialize(users)
     users ||= User.new
     if usuario.role == "administrador"
-      can :manage, :all
+      can :access, :home_panel
     elsif user.role == "ingles"
-      alias_action :create, :read, :update, :to => :cru
-             cru :Documento
+      can :access, :ingles_panel
     elsif user.role == "financieros"
-      alias_action :create, :read, :update, :to => :cru
+      can :access, :financieros_panel
     elsif user.role == "escolares"
       alias_action :create, :read, :update, :to => :cru
       elsif user.role== "direccion"
